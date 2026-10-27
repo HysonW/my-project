@@ -1,0 +1,34 @@
+{
+  "subtitle": "3.36 · housing.csv — Orange Canvas",
+  "width": 1800,
+  "height": 820,
+  "widgets": [
+    {"id": "file", "title": "File", "sub": "housing.csv", "glyph": "file", "x": 90, "y": 245, "w": 180, "h": 100, "inputs": false},
+    {"id": "sel", "title": "Select Columns", "sub": "12 continuous features", "glyph": "cols", "x": 360, "y": 245, "w": 200, "h": 100, "selected": true},
+    {"id": "z", "title": "Preprocess", "sub": "Normalize: Z-score", "glyph": "sliders", "x": 650, "y": 150, "w": 200, "h": 105, "selected": true},
+    {"id": "mm", "title": "Preprocess", "sub": "Normalize: [0, 1]", "glyph": "sliders", "x": 650, "y": 350, "w": 200, "h": 105},
+    {"id": "box", "title": "Box Plot", "sub": "12 attributes", "glyph": "box", "x": 940, "y": 150, "w": 180, "h": 100},
+    {"id": "dist", "title": "Distributions", "sub": "LSTAT / CRIM", "glyph": "curve", "x": 940, "y": 350, "w": 180, "h": 100},
+    {"id": "table", "title": "Data Table", "sub": "506 × 14", "glyph": "table", "x": 360, "y": 500, "w": 180, "h": 100}
+  ],
+  "links": [
+    {"from": "file", "to": "sel"},
+    {"from": "sel", "to": "z"},
+    {"from": "sel", "to": "mm"},
+    {"from": "z", "to": "box"},
+    {"from": "mm", "to": "dist"},
+    {"from": "file", "to": "table"}
+  ],
+  "note": {
+    "x": 1220,
+    "y": 500,
+    "w": 500,
+    "h": 130,
+    "title": "预处理设置",
+    "lines": [
+      "Z-score：x′ = (x − μ) / σ",
+      "Min-Max：x′ = (x − min) / (max − min)"
+    ]
+  },
+  "footer": "工作流示意图，非 Orange 截图：File → Select Columns → Preprocess → Box Plot / Distributions"
+}
